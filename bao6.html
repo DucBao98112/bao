@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="TRAN DUC BAO">
+    <meta name="description" content="買うは走る、走るはカッコいい">
+    <title>MOTO TUNN</title>
+    <div class="cart-icon" onclick="openOrderForm()">🛒</div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url ('imag/bg.jag');
+            background-size: cover;  
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.6); 
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        header input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        header button {
+            padding: 10px 20px;
+            background-color: #e60000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        header button:hover {
+            background-color: #b30000;
+        }
+
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #e60000;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover {
+            background-color: #b30000;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            z-index: 1;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .motorbike-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .motorbike-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .motorbike-card h2 {
+            color: #e60000;
+            font-size: 28px;
+            margin-top: 15px;
+        }
+
+        .motorbike-card p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            display: inline-block;
+            background-color: #e60000;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #b30000;
+        }
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+
+        .contact-section {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: #e60000;
+            font-size: 28px;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-section input, .contact-section textarea {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .contact-section button {
+            padding: 10px 20px;
+            background-color: #e60000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .contact-section button:hover {
+            background-color: #b30000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MOTO TUNN HELLO</h1>
+        <p>買うは走る、走るはカッコいい.</p>
+        <div class="cart-icon" onclick="openOrderForm()">🛒</div>
+        
+        <input type="text" id="search" placeholder="モーターサイクルを検索...">
+        <button onclick="searchMotorbike()">検索</button>
+        <div class="dropdown">
+          <button class="dropbtn">メニュー</button>
+          <div class="dropdown-content">
+            <a href="https://www.honda.co.jp/CBR1000RRR/">ホーム</a>
+            <a href="https://www.honda.co.jp/mobilityservice/?from=navi_header_drawer_www">サービス</a>
+            <a href="https://moto.webike.net/inquiry_history.html">お問い合わせ</a>
+            <a href="https://event.webike.net">インベトNAVI</a>
+            <a href="https://imp.webike.net">コミュニテイ</a>
+          </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="motorbike-card">
+            <img src="ANH XE /画像 1.jpg" alt="Ducati Monster">
+            <h2>Ducati Monster 2021</h2>
+            <p><strong>エンジン:</strong> 937cc L-Twin, 111馬力</p>
+            <p><strong>値段:</strong> 1,000,000¥</p>
+            <a href="./bao1.html" class="buy-button">今すぐ購入
+            </a>
+        </div>
+        <div class="motorbike-card">
+            <img src="ANH XE /画像 2.jpg" alt="Kawasaki Ninja H2">
+            <h2>Kawasaki Ninja H2</h2>
+            <p><strong>エンジン:</strong> 998cc Inline-4, 231馬力</p>
+            <p><strong>値段:</strong> 1,800,000¥</p>
+            <a href="bao2.html" class="buy-button">今すぐ購入</a>
+        </div>
+        <div class="motorbike-card">
+            <img src="ANH XE /画像 4.jpg" alt="Yamaha YZF-R1">
+            <h2>Yamaha YZF-R1</h2>
+            <p><strong>エンジン:</strong> 998cc Inline-4, 200馬力</p>
+            <p><strong>値段:</strong> 1,200,000¥</p>
+            <a href="Yamaha.html" class="buy-button">今すぐ購入</a>
+        </div>
+        
+        <div class="motorbike-card">
+            <img src="ANH XE /画像 7.jpg" alt="BMW 1000 hp4">
+            <h2>BMW 1000 hp4</h2>
+            <p><strong>エンジン:</strong> 998cc Inline-4, 245馬力</p>
+            <p><strong>値段:</strong> 1,800,000¥</p>
+            <a href="BMW.html" class="buy-button">今すぐ購入</a>
+        </div>
+        <div class="motorbike-card">
+            <img src="ANH XE /画像 6.jpg" alt="DUKE 790">
+            <h2>DUKE 790</h2>
+            <p><strong>エンジン:</strong> 790cc Inline-4, 89馬力</p>
+            <p><strong>値段:</strong> 780,000¥</p>
+            <a href="duke.html" class="buy-button">今すぐ購入</a>
+        </div>
+        <div class="motorbike-card">
+                <img src="ANH XE /画像 3.jpg" alt="Honda CBR1000RR">
+                <h2>Honda CBR1000RR</h2>
+                <p><strong>エンジン:</strong> 999cc Inline-4, 189馬力</p>
+                <p><strong>値段:</strong> 1,000,000¥</p>
+                    <a href="cbr.html" class="buy-button">今すぐ購入</a>
+               
+            </div>
+        </div>
+    
+        <div class="contact-section">
+            <h2>お問い合わせ</h2>
+            <form id="contact-form">
+                <label for="name">お名前:</label>
+                <input type="text" id="name" name="name" placeholder="あなたの名前" required>
+                
+                <label for="message">メッセージ:</label>
+                <textarea id="message" name="message" placeholder="メッセージを入力してください" rows="4" required></textarea>
+                
+                <button type="submit">送信</button>
+            </form>
+        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device=device-width, initial-scale=1.0">
+        <title>Google Map</title>
+    </head>
+    <body>
+    
+        <h1>Google Map</h1>
+    
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26351.93668955213!2d134.02632873476563!3d34.350679500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3553eb88e9e45dcd%3A0xd60ec44cae2546db!2z6auY5p2-6aeF!5e0!3m2!1sja!2sjp!4v1747032702446!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+    
+    </body>"
+    </head>
+        <footer>
+            <p>&copy; 2025 MOTO TUNN</p>
+            <p>〒760-0011 香川県高松市浜ノ町 １−２０</p>
+            <p>電話番号: 123-4567-8989</p>
+            <p>mototunn@gmail.com</p>
+        </footer>
+    
+        <script>
+            function searchMotorbike() {
+                var searchTerm = document.getElementById('search').value.toLowerCase();
+                var motorbikes = document.querySelectorAll('.motorbike-card');
+    
+                motorbikes.forEach(function(card) {
+                    var title = card.querySelector('h2').textContent.toLowerCase();
+                    if (title.indexOf(searchTerm) > -1) {
+                        card.style.display = 'block'; 
+                    } else {
+                        card.style.display = 'none'; 
+                    }
+                });
+            }
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var name = document.getElementById('name').value;
+                var message = document.getElementById('message').value;
+                if (name && message) {
+                    alert('ありがとうございます! メッセージは送信されました。');
+                } else {
+                    alert('お名前とメッセージを入力してください。');
+                }
+                document.getElementById('contact-form').reset();
+            }
+    
+)

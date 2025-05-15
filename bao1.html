@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="TRAN DUC BAO">
+    <meta name="description" content="買うは走る、走るはカッコいい">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOTO TUNN</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            position: relative;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+        }
+        section.store-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .store {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 90%;
+            max-width: 900px;
+            box-sizing: border-box;
+        }
+        .store h2 {
+            color: #333;
+            font-size: 1.4em;
+            margin-top: 20px;
+        }
+        .store p {
+            margin: 5px 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #e60000;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #cc0000;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+
+        
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            background-color: #e60000;
+            color: white;
+            border-radius: 50%;
+            padding: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+       
+        .order-form {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .order-form .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+        }
+        .order-form input, .order-form button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .order-form button {
+            background-color: #e60000;
+            color: white;
+            font-weight: bold;
+        }
+        .order-form button:hover {
+            background-color: #cc0000;
+        }
+        .close-form {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MOTO TUNN</h1>
+        <p>買うは走る、走るはカッコいい</p>
+
+
+        <div class="cart-icon" onclick="openOrderForm()">🛒</div>
+    </header>
+
+    <section class="store-list">
+        <div class="store">
+            <div class="image-gallery">
+                <img src="ANH XE /画像 8.jpg" alt="Ducati 1">
+                <img src="ANH XE /画像 10.jpg" alt="Ducati 2">
+                <img src="ANH XE /画像 14.jpg" alt="Ducati 3">
+                <img src="ANH XE /画像 13.jpg" alt="Ducati 4">
+                <img src="ANH XE /画像 12.jpg" alt="Ducati 5">
+                <img src="ANH XE /画像 11.jpg" alt="Ducati 6">
+            </div>
+            <h2>Ducati Monster 2021</h2>
+            <p><strong>エンジン:</strong> 937cc L-Twin, 111馬力</p>
+            <a href="#" class="buy-button" onclick="openOrderForm()">今すぐ購入</a>
+        </div>
+    </section>
+
+
+    <div class="order-form" id="orderForm">
+        <div class="form-container">
+            <span class="close-form" onclick="closeOrderForm()">×</span>
+            <h2>注文</h2>
+            <form action="process_order.php" method="POST">
+                <input type="text" name="name" placeholder="お名前" required>
+                <input type="email" name="email" placeholder="メールアドレス" required>
+                <input type="tel" name="phone" placeholder="電話番号" required>
+                <input type="text" name="address" placeholder="配送先住所" required>
+                <button type="submit">注文する</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MOTO TUNN</p>
+    </footer>
+
+    <script>
+        
+        function openOrderForm() {
+            document.getElementById('orderForm').style.display = 'flex';
+        }
+
+       
+        function closeOrderForm() {
+            document.getElementById('orderForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
