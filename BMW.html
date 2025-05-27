@@ -149,6 +149,41 @@
             font-size: 20px;
             color: #333;
         }
+        .rating-box {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.rating-stars {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-size: 2.2rem;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.rating-stars input {
+    display: none;
+}
+
+.rating-stars label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating-stars input:checked ~ label,
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: #ffcc00;
+}
+
+#ratingResult {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}
+
     </style>
 </head>
 <body>
@@ -170,8 +205,79 @@
                 <img src="ANH XE /2787316_Xe.tinhte.vn_-_BMW_-_HP4-1819.jpg" alt="BMW">
             </div>
             <h2>BMW HP4</h2>
-            <p><strong>エンジン:</strong> 998cc Inline-4, 231馬力</p>
+            <p><strong>エンジン:</strong> 998cc Inline-4, 231馬力 車体はアルミ製のブリッジフレームを採用しており、そこにボア・ストロークが80mm×49.7mmの999ccショートストローク水冷DOHC4気筒ユニットをマウントする。日本仕様の最高出力は10,000回転156馬力で、最大トルクは10,000回転で110Nmを発生した。このエンジンスペックに関しては同年式の「S1000RR」と同じだった。ただ、エキゾーストパイプはフルチタン製へとアップグレードされていて、ベースマシンより4.5kgも軽い。
+また「HP4」は、BMWモトラッドとしては初となる「ローンチ・コントロール」を採用している。走行シチュエーションに応じて最適なエンジントルクに制御する電子プログラムで、特にサーキット走行時の安全性やマシン性能を最大限に引き出すことをサポートする機能となる。
+駆動系統にはシフトアップに対応するクイックシフターも標準装備となっていた。
+</p>
+<table style="width:100%; border-collapse: collapse;" border="1">
+    <tr>
+        <th>タイプグレード名</th>
+        <td>HP4</td>
+    </tr>
+    <tr>
+        <th>仕向け・仕様</th>
+        <td>海外メーカーモデル</td>
+    </tr>
+    <tr>
+        <th>全長 (mm)</th>
+        <td>2060</td>
+    </tr>
+    <tr>
+        <th>全幅 (mm)</th>
+        <td>700</td>
+    </tr>
+    <tr>
+        <th>全高 (mm)	</th>
+        <td>1140</td>
+    </tr>
+    <tr>
+        <th>ホイールベース (mm)</th>
+        <td>1430</td>
+    </tr>
+    <tr>
+        <th>シート高 (mm)</th>
+        <td>820</td>
+    </tr>
+    <tr>
+        <th>車両重量 (kg)</th>
+        <td>199</td>
+    </tr>
+    <tr>
+        <th>燃料消費率（1）(km/L)</th>
+        <td>17.5</td>
+    </tr>
+    <tr>
+        <th>測定基準（1）</th>
+        <td>90km/h走行時</td>
+    </tr>
+    <tr>
+        <th>排気量 (cc)</th>
+        <td>999</td>
+    </tr>
+    <tr>
+        <th>最大トルク回転数（rpm）</th>
+        <td>10000</td>
+    </tr>
+    <tr>
+        <th>変速比</th>
+        <td>1速 2.647/2速 2.091/3速 1.727/4速 1.500/5速 1.360/6速 1.261</td>
+    </tr>
+</table>
+;
             <a href="#" class="buy-button" onclick="openOrderForm()">今すぐ購入</a>
+        <div class="rating-box">
+  <h3>製品の評価をお願いします</h3>
+  <form id="ratingForm">
+    <div class="rating-stars">
+      <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+    </div>
+    <div id="ratingResult">評価がまだ選択されていません</div>
+  </form>
+</div>
         </div>
     </section>
 
@@ -203,6 +309,14 @@
         function closeOrderForm() {
             document.getElementById('orderForm').style.display = 'none';
         }
+        const stars = document.querySelectorAll('input[name="rating"]');
+const result = document.getElementById('ratingResult');
+
+stars.forEach(star => {
+  star.addEventListener('change', () => {
+    result.textContent = `あなたの評価：${star.value} 星`;
+  });
+});
     </script>
 </body>
 </html>

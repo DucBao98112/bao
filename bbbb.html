@@ -6,6 +6,7 @@
     <meta name="description" content="買うは走る、走るはカッコいい">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOTO TUNN</title>
+    <title>両側広告</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -149,6 +150,122 @@
             font-size: 20px;
             color: #333;
         }
+        .rating-box {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.rating-stars {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-size: 2.2rem;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.rating-stars input {
+    display: none;
+}
+
+.rating-stars label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating-stars input:checked ~ label,
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: #ffcc00;
+}
+
+#ratingResult {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .floating-ad {
+      position: fixed;
+      bottom: 20px;
+      width: 280px;
+      background: #fff;
+      border: 2px solid #e91e63;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      z-index: 9999;
+      overflow: hidden;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    .left-ad {
+      left: 20px;
+    }
+
+    .right-ad {
+      right: 20px;
+    }
+
+    .floating-ad img {
+      width: 100%;
+      display: block;
+    }
+
+    .floating-ad-content {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .floating-ad h4 {
+      margin: 0;
+      color: #e91e63;
+      font-size: 16px;
+    }
+
+    .floating-ad p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .floating-ad a.button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 16px;
+      background: #e91e63;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 20px;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #333;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     </style>
 </head>
 <body>
@@ -170,8 +287,73 @@
                 
             </div>
             <h2>CBR 1000</h2>
-            <p><strong>エンジン:</strong> 999cc Inline-4, 189馬力</p>
+            <p><strong>エンジン:</strong> 999cc Inline-4, 189馬力160kW/14,000rpmの最高出力を実現しながら、最新の排出ガス規制＊1に適合した999cm³の水冷4ストロークDOHC4バルブ直列4気筒エンジンを搭載。エンジンブロックに設けたリアクッションピボット＊2や、クランク軸とメイン、カウンター各軸間の短縮化によりエンジン前後長を抑え、マス集中化と運動性能向上を追求した。ボア・ストロークはRC213Vと同様φ81mm×48.5mmのショートストローク設定とし、吸排気効率を高めるための大径バルブを採用している。またクランクケースの剛性を最適化することでクランクシャフトのたわみを抑え、高出力・高回転に対応している。2024年モデルでは、クランクケースやクランクシャフト、コンロッドを新設計し、エンジン単体で720gもの軽量化を実現。クランクシャフトにおいてはジャーナル径・ピン径の変更によりフリクションおよび慣性マスを低減してスロットルレスポンスを向上。あわせてトランスミッションのギア比を変更することで中速域の加速性能を高め、サーキットだけでなく公道における扱いやすさを追求している。</p>
+        <table style="width:100%; border-collapse: collapse;" border="1">
+            <tr>
+                <th>タイプグレード名</th>
+                <td>CBR 1000 rr</td>
+            </tr>
+             <tr>
+                <th>排気量</th>
+                <td>999cc</td>
+            </tr>
+             <tr>
+                <th>燃料消費率	</th>
+                <td>22.0(60km/h)<2名乗車時>	</td>
+            </tr>
+             <tr>
+                <th>航続可能距離	</th>
+                <td>352.0km(概算値)</td>
+            </tr>
+             <tr>
+                <th>燃料供給方式</th>
+                <td>インジェクション</td>
+            </tr>
+             <tr>
+                <th>フロントウインカー定格</th>
+                <td>LED</td>
+            </tr>
+             <tr>
+                <th>ヘッドライト</th>
+                <td>LED ライトタイプ: -</td>
+            </tr>
+             <tr>
+                <th>ヘッドライト備考</th>
+                <td>LED</td>
+            </tr>
+             <tr>
+                <th>ボア</th>
+                <td>81.0mm</td>
+            </tr>
+             <tr>
+                <th>軸間距離</th>
+                <td>1455.0mm</td>
+            </tr>
+             <tr>
+                <th>エンジン潤滑方式</th>
+                <td>圧送飛沫併用式</td>
+            </tr>
+             <tr>
+                <th>点火方式</th>
+                <td>トランジスタ点火</td>
+             </tr>
+
+        </table>
+
             <a href="#" class="buy-button" onclick="openOrderForm()">今すぐ購入</a>
+        <div class="rating-box">
+  <h3>製品の評価をお願いします</h3>
+  <form id="ratingForm">
+    <div class="rating-stars">
+      <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+    </div>
+    <div id="ratingResult">評価がまだ選択されていません</div>
+  </form>
+</div>
         </div>
     </section>
 
@@ -186,6 +368,28 @@
                 <input type="text" name="address" placeholder="配送先住所" required>
                 <button type="submit">注文する</button>
             </form>
+            <div class="floating-ad left-ad" id="leftAd">
+  <span class="close-btn" onclick="document.getElementById('leftAd').style.display='none'">&times;</span>
+  <img src="https://www.ducati.com/jp/ja/bikes/streetfighter/ducati-streetfighter-v4-supreme" alt="Ducati Streetfighter V4 Supreme®">
+  <div class="floating-ad-content">
+    <img src="ANH XE /画像 15.jpg" alt="Ducati Streetfighter V4 Supreme®">
+    <h4>Ducati Streetfighter V4 Supreme®新登場！</h4>
+    <p>驚きのスピードと美しいデザインをぜひ体験してください。</p>
+    <a href="#" class="button">今すぐチェック</a>
+  </div>
+</div>
+
+
+<div class="floating-ad right-ad" id="rightAd">
+  <span class="close-btn" onclick="document.getElementById('rightAd').style.display='none'">&times;</span>
+  <img src="https://www.hapscycle.com/Motorcycles-BMW-S-1000-RR-2025-Sarasota-FL-542b1993-4725-4f0a-8127-b220002a4dfa" alt="2025 BMW S 1000 RR">
+  <div class="floating-ad-content">
+    <img src="ANH XE /2000000010.jpg" alt="2025 BMW S 1000 RR">
+    <h4>2025 BMW S 1000 RR</h4>
+    <p>健康管理とスマート機能を腕に。</p>
+    <a href="#" class="button">詳細を見る</a>
+  </div>
+</div>
         </div>
     </div>
 
@@ -203,6 +407,14 @@
         function closeOrderForm() {
             document.getElementById('orderForm').style.display = 'none';
         }
+        const stars = document.querySelectorAll('input[name="rating"]');
+const result = document.getElementById('ratingResult');
+
+stars.forEach(star => {
+  star.addEventListener('change', () => {
+    result.textContent = `あなたの評価：${star.value} 星`;
+  });
+});
     </script>
 </body>
 </html>

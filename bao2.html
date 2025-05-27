@@ -149,7 +149,75 @@
             cursor: pointer;
             font-size: 20px;
             color: #333;
-        }
+        }.rating-box {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.rating-stars {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-size: 2.2rem;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.rating-stars input {
+    display: none;
+}
+
+.rating-stars label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating-stars input:checked ~ label,
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: #ffcc00;
+}
+
+#ratingResult {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}
+.rating-box {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.rating-stars {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-size: 2.2rem;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.rating-stars input {
+    display: none;
+}
+
+.rating-stars label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating-stars input:checked ~ label,
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: #ffcc00;
+}
+
+#ratingResult {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}
+
     </style>
 </head>
 <body>
@@ -172,8 +240,70 @@
                 <img src="ANH XE /H2_Carbon_zing_1_2.jpg.webp" alt="H2">
             </div>
             <h2>Kawasaki Ninja H2</h2>
-            <p><strong>エンジン:</strong> 998cc Inline-4, 231馬力</p>
+            <p><strong>エンジン:</strong> 998cc Inline-4, 231馬力 Ninja H2 SXは、カワサキ史上最も進化したスーパーチャージドエンジンを搭載するスポーツツアラーであり、最高水準の技術を集結することで高い性能と快適性を融合した究極のモデルです。アダプティブクルーズコントロールや、ブラインドスポットディティクションを含むボッシュ製ARAS (アドバンスト・ライダー・アシスタンス・システム) によって、あらゆる環境下でライダーにメリットを提供。6.5インチのフルカラーTFT液晶インストゥルメントには、カワサキ独自のインフォテインメントアプリ「Kawasaki SPIN」も搭載しています。またスーパーチャージドエンジンは、長距離ツーリングから日常的なライディングまで、あらゆるシチュエーションで爽快感を得ることができます。最高のテクノロジーとは、ライダー自身の延長線上に当たり前のように存在し、自由を実現してくれるものです。Ninja H2 SXは、そんな自由を追い求め開発されました。
+
+</p>
+<table style="width:100%; border-collapse: collapse;" border="1">
+    <tr>
+        <th>タイプグレード名</th>
+        <td>Ninja H2 Carbon</td>
+    </tr>
+     <tr>
+        <th>型式</th>
+        <td>2BL-ZXT02J</td>
+    </tr>
+     <tr>
+        <th>排気量 (cc)</th>
+        <td>998</td>
+    </tr>
+     <tr>
+        <th>変速比	</th>
+        <td>1速 3.187/2速 2.526/3速 2.045/4速 1.727/5速 1.523/6速 1.347</td>
+    </tr>
+     <tr>
+        <th>ブレーキオイル適合規格	</th>
+        <td>DOT 4</td>
+    </tr>
+     <tr>
+        <th>推奨エンジンオイル（SAE粘度）	</th>
+        <td>10W-40</td>
+    </tr>
+     <tr>
+        <th>エンジン潤滑方式	</th>
+        <td>ウェットサンプ式</td>
+    </tr>
+     <tr>
+        <th>燃料タンク容量 (L)	</th>
+        <td>17</td>
+    </tr>
+     <tr>
+        <th>最大トルク回転数（rpm）	</th>
+        <td>11000</td>
+    </tr> <tr>
+        <th>最大トルク（kgf･m）	</th>
+        <td>14.4</td>
+    </tr> <tr>
+        <th>最高出力回転数（rpm）※ラムエア加圧	</th>
+        <td>11500</td>
+    </tr> <tr>
+        <th>最高出力（kW）※ラムエア加圧	</th>
+        <td>178</td>
+    </tr>
+</table>
             <a href="#" class="buy-button" onclick="openOrderForm()">今すぐ購入</a>
+            <div class="rating-box">
+  <h3>製品の評価をお願いします</h3>
+  <form id="ratingForm">
+    <div class="rating-stars">
+      <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+    </div>
+    <div id="ratingResult">評価がまだ選択されていません</div>
+  </form>
+</div>
         </div>
     </section>
 
@@ -188,6 +318,19 @@
                 <input type="tel" name="phone" placeholder="電話番号" required>
                 <input type="text" name="address" placeholder="配送先住所" required>
                 <button type="submit">注文する</button>
+                <div class="rating-box">
+  <h3>製品の評価をお願いします</h3>
+  <form id="ratingForm">
+    <div class="rating-stars">
+      <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+    </div>
+    <div id="ratingResult">評価がまだ選択されていません</div>
+  </form>
+</div>
             </form>
         </div>
     </div>
@@ -206,6 +349,7 @@
         function closeOrderForm() {
             document.getElementById('orderForm').style.display = 'none';
         }
+        
     </script>
 </body>
 </html>

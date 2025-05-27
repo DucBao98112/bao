@@ -149,6 +149,41 @@
             font-size: 20px;
             color: #333;
         }
+        .rating-box {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.rating-stars {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-size: 2.2rem;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.rating-stars input {
+    display: none;
+}
+
+.rating-stars label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating-stars input:checked ~ label,
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: #ffcc00;
+}
+
+#ratingResult {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}
+
     </style>
 </head>
 <body>
@@ -170,8 +205,57 @@
                 <img src="ANH XE /3015344_Xe.Tinhte.vn-Yamaha_R1-6733.jpg" alt="Yamaha">
             </div>
             <h2>Yamaha R1</h2>
-            <p><strong>エンジン:</strong> 998cc Inline-4, 231馬力</p>
-            <a href="#" class="buy-button" onclick="openOrderForm()">今すぐ購入</a>
+            <p><strong>エンジン:</strong> 997cc Inline-4, 231馬力 真のコントローラブル。水冷・DOHC・4バルブ・直列4気筒・997cm³・クロスプレーンエンジン
+
+高性能エンジンであることは、もはや必然だ。その性能を、いかにして扱いやすく仕立て上げるか。開発の粋を集めた、動弁系、燃焼系、制御系により、「コントローラブル」という言葉の定義を変えた。アクセルを回し、戻す時に、まったく過不足なく、ライダーが期待している通りのリアクションをする。それが YZF-R1のエンジンである。当然のことのようだが、その実現は極めて困難だ。10% 開けた時に10%の、50%開けた時に50%の、そして100%開けた時に100%のパワーを得たとライダーが感じ取れること。アクセルを戻した時に、望むだけのエンジンブレーキが得られること。これは単にメカニズムの正確さによって実現できるものではない。ライダーの感性に寄り添ったフィーリングの作り込みが求められる。数値化できない感覚的な部分にこだわり抜く。これはヤマハが伝統的に貫いてきた、ライダー重視の姿勢そのものである。YZF-R1のエンジンは、その集大成と言える。安心して、アクセルを操作できる。その先に待っているのは、爽快で心地よいマシンコントロールの極致である。</p>
+           <table style="width:100%; border-collapse: collapse;" border="1">
+            <tr>
+                <th> タイプグレード名</th>
+                <td>yamaha R1</td>
+            </tr>
+            <tr>
+                <th>総排気量 </th>
+                <td>998cc</td>
+            </tr>
+            <tr>
+                <th>エンジン形式</th>
+                <td>水冷4ストDOHC4バルブ並列4気筒</td>
+            </tr>
+            <tr>
+                <th> 最高出力</th>
+                <td>200PS/13500rpm</td>
+            </tr>
+            <tr>
+                <th>最大トルク </th>
+                <td>11.5kg-m/11500rpm</td>
+            </tr>
+            <tr>
+                <th> 車両重量（装備）</th>
+                <td>202kg</td>
+            </tr>
+            <tr>
+                <th>エンジン形式 </th>
+                <td>水冷・4ストローク・DOHC・4バルブ</td>
+            </tr>
+            <tr>
+                <th>シートの高さ </th>
+                <td>855mm</td>
+            </tr>
+            <tr>
+                <th>燃費/L </th>
+                <td>21.6km/l(60km走行時) 15.2km/l(WMTCモード値)</td>
+            </tr>
+            <tr>
+                <th>タンク容量 </th>
+                <td>17L</td>
+            </tr>
+            <tr>
+                <th> 測定基準（1）	</th>
+                <td>国交省届出（60km/h走行時）</td>
+            </tr>
+
+           </table>
+<a href="#" class="buy-button" onclick="openOrderForm()">今すぐ購入</a>
         </div>
     </section>
 
@@ -185,6 +269,21 @@
                 <input type="tel" name="phone" placeholder="電話番号" required>
                 <input type="text" name="address" placeholder="配送先住所" required>
                 <button type="submit">注文する</button>
+               
+<div class="rating-box">
+  <h3>製品の評価をお願いします</h3>
+  <form id="ratingForm">
+    <div class="rating-stars">
+      <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+    </div>
+    <div id="ratingResult">評価がまだ選択されていません</div>
+  </form>
+</div>
+
             </form>
         </div>
     </div>
@@ -203,6 +302,14 @@
         function closeOrderForm() {
             document.getElementById('orderForm').style.display = 'none';
         }
+        const stars = document.querySelectorAll('input[name="rating"]');
+const result = document.getElementById('ratingResult');
+
+stars.forEach(star => {
+  star.addEventListener('change', () => {
+    result.textContent = `あなたの評価：${star.value} 星`;
+  });
+});
     </script>
 </body>
 </html>

@@ -6,66 +6,146 @@
     <meta name="description" content="買うは走る、走るはカッコいい">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOTO TUNN</title>
+    
+    <title>両側広告</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            
+            background-image: url('imag/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+                    background-color: #f4f4f4;
             position: relative;
+            
+
         }
+
         header {
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.6);
             color: #fff;
             padding: 20px;
             text-align: center;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-        }
-        section.store-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px;
-        }
-        .store {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            padding: 15px;
-            width: 90%;
-            max-width: 900px;
-            box-sizing: border-box;
-        }
-        .store h2 {
-            color: #333;
-            font-size: 1.4em;
-            margin-top: 20px;
-        }
-        .store p {
-            margin: 5px 0;
+                    position: relative;
+
         }
 
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        header input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        header button {
+            padding: 10px 20px;
+            background-color: #e60000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        header button:hover {
+            background-color: #b30000;
+        }
+
+        .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #e60000;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover {
+            background-color: #b30000;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            z-index: 1;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .motorbike-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .motorbike-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .motorbike-card h2 {
+            color: #e60000;
+            font-size: 28px;
             margin-top: 15px;
         }
-        .image-gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            object-fit: cover;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .image-gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+        .motorbike-card p {
+            font-size: 16px;
+            margin: 10px 0;
         }
 
         .buy-button {
@@ -73,139 +153,310 @@
             padding: 12px 25px;
             background-color: #e60000;
             color: white;
+            padding: 12px 30px;
             text-decoration: none;
-            border-radius: 6px;
+            font-size: 18px;
+            border-radius: 8px;
             margin-top: 20px;
-            font-size: 1em;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s;
         }
+
         .buy-button:hover {
-            background-color: #cc0000;
+            background-color: #b30000;
         }
 
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #111;
+            color: white;
             text-align: center;
             padding: 10px;
-            width: 100%;
-            position: relative;
+            margin-top: 40px;
         }
 
-        /* Giỏ hàng */
-        .cart-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-            background-color: #e60000;
-            color: white;
-            border-radius: 50%;
-            padding: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        /* Form Đặt Hàng */
-        .order-form {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .order-form .form-container {
-            background-color: white;
-            padding: 30px;
+        .contact-section {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
             border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 80%;
-            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
         }
-        .order-form input, .order-form button {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
+
+        .contact-section h2 {
+            color: #e60000;
+            font-size: 28px;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+                   z-index: 1000;
+
+        }
+
+        .contact-section input,
+        .contact-section textarea {
+            width: 80%;
+            margin-bottom: 10px;
+            padding: 10px;
             border-radius: 5px;
             border: 1px solid #ddd;
+            font-size: 16px;
         }
-        .order-form button {
+
+        .contact-section button {
+            padding: 10px 20px;
             background-color: #e60000;
             color: white;
-            font-weight: bold;
-        }
-        .order-form button:hover {
-            background-color: #cc0000;
-        }
-        .close-form {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
             cursor: pointer;
-            font-size: 20px;
-            color: #333;
         }
+
+        .contact-section button:hover {
+            background-color: #b30000;
+        }
+        body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .floating-ad {
+      position: fixed;
+      bottom: 20px;
+      width: 280px;
+      background: #fff;
+      border: 2px solid #e91e63;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      z-index: 9999;
+      overflow: hidden;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    .left-ad {
+      left: 20px;
+    }
+
+    .right-ad {
+      right: 20px;
+    }
+
+    .floating-ad img {
+      width: 100%;
+      display: block;
+    }
+
+    .floating-ad-content {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .floating-ad h4 {
+      margin: 0;
+      color: #e91e63;
+      font-size: 16px;
+    }
+
+    .floating-ad p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .floating-ad a.button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 16px;
+      background: #e91e63;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 20px;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #333;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     </style>
 </head>
 <body>
-    <header>
-        <h1>MOTO TUNN</h1>
-        <p>買うは走る、走るはカッコいい</p>
 
-        <!-- Giỏ hàng icon -->
-        <div class="cart-icon" onclick="openOrderForm()">🛒</div>
-    </header>
+<header>
+    <h1>MOTO TUNN HELLO</h1>
+    <p>買うは走る、走るはカッコいい.</p>
+    <div class="cart-icon" onclick="openOrderForm()">🛒</div>
 
-    <section class="store-list">
-        <div class="store">
-            <div class="image-gallery">
-                <img src="ANH XE /2787297_Xe.tinhte.vn_-_BMW_-_HP4-0466.jpg" alt="BMW">
-                <img src="ANH XE /2787301_Xe.tinhte.vn_-_BMW_-_HP4-0470.jpg" alt="BMW">
-                <img src="ANH XE /2787302_Xe.tinhte.vn_-_BMW_-_HP4-0471.jpg" alt="BMW">
-                <img src="ANH XE /2787303_Xe.tinhte.vn_-_BMW_-_HP4-0473.jpg" alt="BMW">
-                <img src="ANH XE /2787307_Xe.tinhte.vn_-_BMW_-_HP4-0477.jpg" alt="BMW">
-                <img src="ANH XE /2787316_Xe.tinhte.vn_-_BMW_-_HP4-1819.jpg" alt="BMW">
-            </div>
-            <h2>BMW HP4</h2>
-            <p><strong>エンジン:</strong> 998cc Inline-4, 231馬力</p>
-            <a href="#" class="buy-button" onclick="openOrderForm()">今すぐ購入</a>
-        </div>
-    </section>
-
-    <!-- Form Đặt Hàng -->
-    <div class="order-form" id="orderForm">
-        <div class="form-container">
-            <span class="close-form" onclick="closeOrderForm()">×</span>
-            <h2>注文</h2>
-            <form action="process_order.php" method="POST">
-                <input type="text" name="name" placeholder="お名前" required>
-                <input type="email" name="email" placeholder="メールアドレス" required>
-                <input type="tel" name="phone" placeholder="電話番号" required>
-                <input type="text" name="address" placeholder="配送先住所" required>
-                <button type="submit">注文する</button>
-            </form>
+    <input type="text" id="search" placeholder="モーターサイクルを検索...">
+    <button onclick="filterMotorbikesByTitle()">検索</button>
+ 
+    <div class="dropdown">
+        <button class="dropbtn">メニュー</button>
+        <div class="dropdown-content">
+            <a href="https://www.honda.co.jp/CBR1000RRR/">ホーム</a>
+            <a href="https://www.honda.co.jp/mobilityservice/?from=navi_header_drawer_www">サービス</a>
+            <a href="https://moto.webike.net/inquiry_history.html">お問い合わせ</a>
+            <a href="https://event.webike.net">インベトNAVI</a>
+            <a href="https://imp.webike.net">コミュニテイ</a>
         </div>
     </div>
+</header>
 
-    <footer>
-        <p>&copy; 2025 MOTO TUNN</p>
-    </footer>
+<div class="container">
 
-    <script>
-        // Mở form đặt hàng
-        function openOrderForm() {
-            document.getElementById('orderForm').style.display = 'flex';
-        }
+       <button class="dropbtn">メニュー</button>
+          <div class="dropdown-content">
+            <a href="https://www.honda.co.jp/CBR1000RRR/">ホーム</a>
+            <a href="https://www.honda.co.jp/mobilityservice/?from=navi_header_drawer_www">サービス</a>
+            <a href="https://moto.webike.net/inquiry_history.html">お問い合わせ</a>
+            <a href="https://event.webike.net">インベトNAVI</a>
+            <a href="https://imp.webike.net">コミュニテイ</a>
+          </div>
+        </div>
+    </header>
 
-        // Đóng form đặt hàng
-        function closeOrderForm() {
-            document.getElementById('orderForm').style.display = 'none';
-        }
-    </script>
-</body>
-</html>
+    <div class="container">
+        <div class="motorbike-card">
+            <img src="ANH XE /画像 1.jpg" alt="Ducati Monster">
+            <h2>Ducati Monster 2021</h2>
+            <p><strong>エンジン:</strong> 937cc L-Twin, 111馬力</p>
+            <p><strong>値段:</strong> 1,000,000¥</p>
+            <a href="./bao1.html" class="buy-button">今すぐ購入
+            </a>
+        </div>
+        <div class="motorbike-card">
+            <img src="ANH XE /画像 2.jpg" alt="Kawasaki Ninja H2">
+            <h2>Kawasaki Ninja H2</h2>
+            <p><strong>エンジン:</strong> 998cc Inline-4, 231馬力</p>
+            <p><strong>値段:</strong> 1,800,000¥</p>
+            <a href="bao2.html" class="buy-button">今すぐ購入</a>
+        </div>
+        <div class="motorbike-card">
+            <img src="ANH XE /画像 4.jpg" alt="Yamaha YZF-R1">
+            <h2>Yamaha YZF-R1</h2>
+            <p><strong>エンジン:</strong> 998cc Inline-4, 200馬力</p>
+            <p><strong>値段:</strong> 1,200,000¥</p>
+            <a href="Yamaha.html" class="buy-button">今すぐ購入</a>
+        </div>
+        
+        <div class="motorbike-card">
+            <img src="ANH XE /画像 7.jpg" alt="BMW 1000 hp4">
+            <h2>BMW 1000 hp4</h2>
+            <p><strong>エンジン:</strong> 998cc Inline-4, 245馬力</p>
+            <p><strong>値段:</strong> 1,800,000¥</p>
+            <a href="BMW.html" class="buy-button">今すぐ購入</a>
+        </div>
+        <div class="motorbike-card">
+            <img src="ANH XE /画像 6.jpg" alt="DUKE 790">
+            <h2>DUKE 790</h2>
+            <p><strong>エンジン:</strong> 790cc Inline-4, 89馬力</p>
+            <p><strong>値段:</strong> 780,000¥</p>
+            <a href="duke.html" class="buy-button">今すぐ購入</a>
+        </div>
+        <div class="motorbike-card">
+                <img src="ANH XE /画像 3.jpg" alt="Honda CBR1000RR">
+                <h2>Honda CBR1000RR</h2>
+                <p><strong>エンジン:</strong> 999cc Inline-4, 189馬力</p>
+                <p><strong>値段:</strong> 1,000,000¥</p>
+                    <a href="bbbb.html" class="buy-button">今すぐ購入</a>
+               <div class="floating-ad left-ad" id="leftAd">
+  <span class="close-btn" onclick="document.getElementById('leftAd').style.display='none'">&times;</span>
+  <div class="floating-ad-content">
+    <img src="ANH XE /画像 15.jpg " alt="Ducati Streetfighter V4 Supreme®">
+    <h4>Ducati Streetfighter V4 Supreme®</h4>
+    <p>驚きのスピードと美しいデザインをぜひ体験してください。</p>
+    <a href="https://www.ducati.com/jp/ja/bikes/streetfighter/ducati-streetfighter-v4-supreme" class="button">今すぐチェック</a>
+  </div>
+</div>
+
+
+<div class="floating-ad right-ad" id="rightAd">
+  <span class="close-btn" onclick="document.getElementById('rightAd').style.display='none'">&times;</span>
+  
+  <div class="floating-ad-content">
+    <img src="ANH XE /2000000010.jpg" alt="2025 BMW S 1000 RR">
+    <h4>2025 BMW S 1000 RR</h4>
+    <p>健康管理とスマート機能を腕に。</p>
+    <a href="https://www.hapscycle.com/Motorcycles-BMW-S-1000-RR-2025-Sarasota-FL-542b1993-4725-4f0a-8127-b220002a4dfa" class="button">詳細を見る</a>
+  </div>
+</div>
+            </div>
+        </div>
+    
+        <div class="contact-section">
+</div>
+
+<div class="contact-section">
+    <h2>お問い合わせ</h2>
+    <form id="contact-form">
+        <label for="name">お名前:</label>
+        <input type="text" id="name" name="name" placeholder="あなたの名前" required>
+        
+        <label for="message">メッセージ:</label>
+        <textarea id="message" name="message" placeholder="メッセージを入力してください" rows="4" required></textarea>
+        
+        <button type="submit">送信</button>
+    </form>
+</div>
+
+<h1>Google Map</h1>
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26351.93668955213!2d134.02632873476563!3d34.350679500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3553eb88e9e45dcd%3A0xd60ec44cae2546db!2z6auY5p2-6aeF!5e0!3m2!1sja!2sjp!4v1747032702446!5m2!1sja!2sjp"
+    width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+   </iframe>
+   <div style="text-align:center; margin-top: 40px;">
+    <a href="https://www.facebook.com/chenlienhe" target="_blank" style="text-decoration: none; color: #3b5998; font-size: 18px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" 
+             alt="Facebook" width="30" height="30" style="vertical-align: middle; margin-right: 8px;">
+     </a>
+    </div>
+   <div style="text-align:center; margin-top: 50px;">
+    <a href="hhttps://www.instagram.com" target="_blank" style="text-decoration: none; color: #983b7e; font-size: 20px;">
+        <img src="ANH XE /Instagram.webp" 
+             alt="instagram" width="30" height="30" style="vertical-align: middle; margin-right: 10px;">
+       
+    </a>
+</div>
+
+
+</iframe>
+
+<footer>
+    <p>&copy; 2025 MOTO TUNN</p>
+    <p>〒760-0011 香川県高松市浜ノ町 １−２０</p>
+    <p>電話番号: 123-4567-8989</p>
+    <p>mototunn@gmail.com.jp</p>
+</footer>
+
+<script>
+    function openOrderForm() {
+        alert("この機能はまだ開発中です。");
+    }
+
+    function filterMotorbikesByTitle() {
+
+    }

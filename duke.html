@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="TRAN DUC BAO">
-    <meta name="description" content="買うは走る、走るはカッコいい">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="author" content="TRAN DUC BAO" />
+    <meta name="description" content="買うは走る、走るはカッコいい" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MOTO TUNN</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -93,8 +93,7 @@
             position: relative;
         }
 
-        
-        .cart-icon {
+     .cart-icon {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -125,6 +124,7 @@
             border-radius: 8px;
             width: 80%;
             max-width: 500px;
+            position: relative;
         }
         .order-form input, .order-form button {
             width: 100%;
@@ -132,11 +132,13 @@
             margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ddd;
+            font-size: 1rem;
         }
         .order-form button {
             background-color: #e60000;
             color: white;
             font-weight: bold;
+            cursor: pointer;
         }
         .order-form button:hover {
             background-color: #cc0000;
@@ -146,9 +148,64 @@
             top: 10px;
             right: 10px;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+            line-height: 1;
+            user-select: none;
+        }
+        .rating-box {
+            margin-top: 25px;
+            text-align: center;
+        }
+        .rating-stars {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+            font-size: 2.2rem;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .rating-stars input {
+            display: none;
+        }
+        .rating-stars label {
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            user-select: none;
+        }
+        .rating-stars input:checked ~ label,
+        .rating-stars label:hover,
+        .rating-stars label:hover ~ label {
+            color: #ffcc00;
+        }
+        #ratingResult {
+            font-size: 1rem;
+            margin-top: 10px;
             color: #333;
         }
+        style
+  .rating-stars {
+    direction: rtl; 
+    unicode-bidi: bidi-override;
+    font-size: 2rem;
+    display: inline-block;
+  }
+  .rating-stars input {
+    display: none;
+  }
+  .rating-stars label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+  .rating-stars input:checked ~ label,
+  .rating-stars label:hover,
+  .rating-stars label:hover ~ label {
+    color: #ffcc00;
+  }
+</style>
     </style>
 </head>
 <body>
@@ -162,18 +219,102 @@
     <section class="store-list">
         <div class="store">
             <div class="image-gallery">
-                <img src="ANH XE /KTM-790-Duke-1.jpg" alt="KTM">
-                <img src="ANH XE /KTM-790-Duke-17.jpg" alt="KTM">
-                <img src="ANH XE /KTM-790-Duke-4.jpg" alt="TKM">
-                <img src="ANH XE /KTM-790-Duke-5.jpg" alt="KTM">
-                <img src="ANH XE /KTM-790-Duke-6.jpg" alt="KTM">
-                <img src="ANH XE /KTM-790-Duke-7.jpg" alt="KTM">
+                <img src="ANH XE /KTM-790-Duke-1.jpg" alt="KTM" />
+                <img src="ANH XE /KTM-790-Duke-17.jpg" alt="KTM" />
+                <img src="ANH XE /KTM-790-Duke-4.jpg" alt="KTM" />
+                <img src="ANH XE /KTM-790-Duke-5.jpg" alt="KTM" />
+                <img src="ANH XE /KTM-790-Duke-6.jpg" alt="KTM" />
+                <img src="ANH XE /KTM-790-Duke-7.jpg" alt="KTM" />
             </div>
             <h2>KTM 790</h2>
-            <p><strong>エンジン:</strong> 790cc Inline-4, 89馬力</p>
+            <p>
+                <strong>エンジン:</strong> 790cc Inline-4, 89馬力 英語から翻訳-KTM 790 Duke は、2017 年から KTM によって製造されたネイキッド パラレル ツイン バイクです。Duke の 799 cc 水冷 8 バルブ DOHC エンジンは、KTM の 75° V ツインを模倣するために 285° クランクシャフトを使用しています。 ウィキペディア
+            </p>
+            <table style="width:100%; border-collapse: collapse;" border="1" cellspacing="0" cellpadding="5">
+                <tr>
+                    <th>イプグレード名</th>
+                    <td>duke 790</td>
+                </tr>
+                <tr>
+                    <th>シート高</th>
+                    <td>32.5 インチ (825 mm)</td>
+                </tr>
+                <tr>
+                    <th>タイヤ</th>
+                    <td>Maxxis Supermaxx Ma-st2 Tl ツーリングリアタイヤ</td>
+                </tr>
+                <tr>
+                    <th>トルク</th>
+                    <td>63.6 lb⋅ft (86.2 N⋅m) (claimed); 60.75 フィート⋅lb (82.37 N⋅m)</td>
+                </tr>
+                <tr>
+                    <th>上演</th>
+                    <td>2017–2020, reintroduced 2023-現在</td>
+                </tr>
+                <tr>
+                    <th>体重</th>
+                    <td>372.5 lb (169 kg)189 kg; 417 lb (189 kg) (wet)</td>
+                </tr>
+                <tr>
+                    <th>馬力</th>
+                    <td>105 hp (78 kW) @ 8,500 rpm (claimed); 99.65 bhp (74.31 kW) @ 9,400 rpm (rear wheel)</td>
+                </tr>
+                <tr>
+                    <th>バッテリー容量</th>
+                    <td>12V-10Ah</td>
+                </tr>
+                <tr>
+                    <th>エンジンオイル容量※全容量 (L)</th>
+                    <td>2.9</td>
+                </tr>
+                <tr>
+                    <th>ブレーキオイル適合規格</th>
+                    <td>DOT 4</td>
+                </tr>
+                <tr>
+                    <th>ヘッドライトタイプ（Hi</th>
+                    <td>LED</td>
+                </tr>
+                <tr>
+                    <th>フレーム型式</th>
+                    <td>クロムモリブデン鋼スペースフレーム</td>
+                </tr>
+            </table>
             <a href="#" class="buy-button" onclick="openOrderForm()">今すぐ購入</a>
         </div>
     </section>
+
+    <div class="order-form" id="orderForm">
+        <div class="form-container">
+            <span class="close-form" onclick="closeOrderForm()">×</span>
+            <h2>注文</h2>
+            <form action="process_order.php" method="POST">
+                <input type="text" name="name" placeholder="お名前" required />
+                <input type="email" name="email" placeholder="メールアドレス" required />
+                <input type="tel" name="phone" placeholder="電話番号" required />
+                <input type="text" name="address" placeholder="配送先住所" required />
+                
+                <div class="rating-box">
+                    <h3>製品の評価をお願いします</h3>
+                    <div class="rating-stars">
+    <from id="ratingForm">
+        <div class="rating-stars">
+     <input type="radio" id="star5" name="rating" value="5" />
+    <label for="star5">★</label>
+    <input type="radio" id="star4" name="rating" value="4" />
+    <label for="star4">★</label>
+    <input type="radio" id="star3" name="rating" value="3" />
+    <label for="star3">★</label>
+    <input type="radio" id="star2" name="rating" value="2" />
+    <label for="star2">★</label>
+    <input type="radio" id="star1" name="rating" value="1" />
+    <label for="star1">★</label>
+  </div>
+  <div id="ratingResult">評価がまだ選択されていません</div>
+</form>
+</div>
+</div>
+</section>
 
     <div class="order-form" id="orderForm">
         <div class="form-container">
@@ -184,25 +325,24 @@
                 <input type="email" name="email" placeholder="メールアドレス" required>
                 <input type="tel" name="phone" placeholder="電話番号" required>
                 <input type="text" name="address" placeholder="配送先住所" required>
-                <button type="submit">注文する</button>
+                <button type="submit">注文する</button> 
             </form>
         </div>
     </div>
 
+            </form>
     <footer>
         <p>&copy; 2025 MOTO TUNN</p>
     </footer>
 
-    <script>
-        
-        function openOrderForm() {
-            document.getElementById('orderForm').style.display = 'flex';
-        }
 
-        
-        function closeOrderForm() {
-            document.getElementById('orderForm').style.display = 'none';
-        }
-    </script>
-</body>
-</html>
+<script>
+  const stars = document.querySelectorAll('input[name="rating"]');
+  const result = document.getElementById('ratingResult');
+
+  stars.forEach(star => {
+    star.addEventListener('change', () => {
+      result.textContent = `あなたの評価：${star.value} 星`;
+    });
+  });
+</script>

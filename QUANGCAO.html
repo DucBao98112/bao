@@ -1,0 +1,119 @@
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>両側広告</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .floating-ad {
+      position: fixed;
+      bottom: 20px;
+      width: 280px;
+      background: #fff;
+      border: 2px solid #e91e63;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      z-index: 9999;
+      overflow: hidden;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    .left-ad {
+      left: 20px;
+    }
+
+    .right-ad {
+      right: 20px;
+    }
+
+    .floating-ad img {
+      width: 100%;
+      display: block;
+    }
+
+    .floating-ad-content {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .floating-ad h4 {
+      margin: 0;
+      color: #e91e63;
+      font-size: 16px;
+    }
+
+    .floating-ad p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .floating-ad a.button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 16px;
+      background: #e91e63;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 20px;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #333;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="floating-ad left-ad" id="leftAd">
+  <span class="close-btn" onclick="document.getElementById('leftAd').style.display='none'">&times;</span>
+  <img src="https://www.ducati.com/jp/ja/bikes/streetfighter/ducati-streetfighter-v4-supreme" alt="Ducati Streetfighter V4 Supreme®">
+  <div class="floating-ad-content">
+    <img src="ANH XE /画像 15.jpg" alt="Ducati Streetfighter V4 Supreme®">
+    <h4>Ducati Streetfighter V4 Supreme®新登場！</h4>
+    <p>驚きのスピードと美しいデザインをぜひ体験してください。</p>
+    <a href="#" class="button">今すぐチェック</a>
+  </div>
+</div>
+
+
+<div class="floating-ad right-ad" id="rightAd">
+  <span class="close-btn" onclick="document.getElementById('rightAd').style.display='none'">&times;</span>
+  <img src="https://www.hapscycle.com/Motorcycles-BMW-S-1000-RR-2025-Sarasota-FL-542b1993-4725-4f0a-8127-b220002a4dfa" alt="2025 BMW S 1000 RR">
+  <div class="floating-ad-content">
+    <img src="ANH XE /2000000010.jpg" alt="2025 BMW S 1000 RR">
+    <h4>2025 BMW S 1000 RR</h4>
+    <p>健康管理とスマート機能を腕に。</p>
+    <a href="#" class="button">詳細を見る</a>
+  </div>
+</div>
+
+</body>
+</html>
